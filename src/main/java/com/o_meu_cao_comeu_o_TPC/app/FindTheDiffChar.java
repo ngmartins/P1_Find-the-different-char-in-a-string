@@ -84,6 +84,42 @@ class FindTheDiffChar
     return charDiff;
     }
 
+    static char findDifCharInTwoStrings3( String str1, String str2 )
+    {
+        char charDiff='@';
+
+        //strings are equals
+        if (str1.equals(str2))
+            return charDiff;
+
+        //strings differs in more than one char
+        if (abs(str1.length() - str2.length())!= 1)
+            return  charDiff;
+
+        int len1=str1.length();
+        int len2=str2.length();
+
+        String strBigger;
+        String strSmaller;
+
+        if (len1>len2){
+            strBigger=str1.toUpperCase();
+            strSmaller=str2.toUpperCase();
+
+        }else{
+            strBigger=str2.toUpperCase();
+            strSmaller=str1.toUpperCase();
+        }
+
+        for(int i=0; i<strSmaller.length()-1;i++) {
+            if(strBigger.charAt(i)!=strSmaller.charAt(i)){
+                return strBigger.charAt(i);
+            }
+        }
+        return strBigger.charAt(strBigger.length()-1);
+    }
+
+
 
 
 }

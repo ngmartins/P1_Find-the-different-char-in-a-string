@@ -8,6 +8,7 @@ import java.util.ArrayList;
 
 import static com.o_meu_cao_comeu_o_TPC.app.FindTheDiffChar.findDifCharInTwoStrings1;
 import static com.o_meu_cao_comeu_o_TPC.app.FindTheDiffChar.findDifCharInTwoStrings2;
+import static com.o_meu_cao_comeu_o_TPC.app.FindTheDiffChar.findDifCharInTwoStrings3;
 
 /**
  * Unit test for simple App.
@@ -56,6 +57,18 @@ public class FindTheDiffCharTest
 
         for (String[] sample : testSamples){
             charDiff = findDifCharInTwoStrings2(sample[0],sample[1]);
+            assertEquals(sample[2].toUpperCase().charAt(0),charDiff);
+        }
+
+    }
+
+    public void testFindDifCharInTwoStrings3(){
+
+        buildTestSample();
+        char charDiff;
+
+        for (String[] sample : testSamples){
+            charDiff = findDifCharInTwoStrings3(sample[0],sample[1]);
             assertEquals(sample[2].toUpperCase().charAt(0),charDiff);
         }
 
